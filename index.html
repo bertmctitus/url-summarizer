@@ -36,6 +36,17 @@
             font-size: 28px;
         }
         
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
         .subtitle {
             color: #666;
             margin-bottom: 30px;
@@ -160,10 +171,18 @@
         .error.show {
             display: block;
         }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <span class="badge">🟢 LIVE</span>
         <h1>🧠 URL Summarizer</h1>
         <p class="subtitle">Extract and summarize any webpage with AI</p>
         
@@ -189,6 +208,10 @@
         <div class="result" id="result">
             <h3>Summary</h3>
             <div class="result-content" id="resultContent"></div>
+        </div>
+        
+        <div class="footer">
+            Powered by OpenAI • Free to use
         </div>
     </div>
 
