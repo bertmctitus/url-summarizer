@@ -15,9 +15,11 @@ import trafilatura
 
 # Configuration
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
-DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "minimax-m2.5:cloud")
+DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gpt-4o-mini")  # Default to OpenAI
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-USE_OPENAI = bool(OPENAI_API_KEY)
+
+# Use OpenAI if API key is provided, otherwise fall back to Ollama
+USE_OPENAI = bool(OPENAI_API_KEY and OPENAI_API_KEY.startswith("sk-"))
 
 
 class SummarizeRequest(BaseModel):
